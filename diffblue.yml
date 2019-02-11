@@ -4,29 +4,17 @@ cbmcArguments:
 units:
   - target:
     - dir: websocket/target/classes
-      file: org/nanohttpd/protocols/websockets/WebSocket.class
-      sourceDir: websocket/src/main/java
-      sourceFile: org/nanohttpd/protocols/websockets/WebSocket.java
-    # Child of WebSocket.class
-    - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/IHTTPSession.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/IHTTPSession.java
-    # Child of WebSocket.class
-    - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/response/Response.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/response/Response.java
-    # Child of WebSocket.class
-    - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/response/Status.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/response/Status.java
-    # Child of WebSocket.class
-    - dir: websocket/target/classes
       file: org/nanohttpd/protocols/websockets/WebSocketFrame.class
       sourceDir: websocket/src/main/java
       sourceFile: org/nanohttpd/protocols/websockets/WebSocketFrame.java
+    - dir: websocket/target/classes
+      file: org/nanohttpd/protocols/websockets/WebSocketException.class
+      sourceDir: websocket/src/main/java
+      sourceFile: org/nanohttpd/protocols/websockets/WebSocketException.java
+    - dir: websocket/target/classes
+      file: org/nanohttpd/protocols/websockets/OpCode.class
+      sourceDir: websocket/src/main/java
+      sourceFile: org/nanohttpd/protocols/websockets/OpCode.java
 phases:
 -
   timeout: 60
