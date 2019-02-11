@@ -1,6 +1,8 @@
 # Tested on Deeptest release 1.10.0
 cbmcArguments:
   java-generate-no-comments: true
+  do-not-test-methods-with-access: [ private ]
+  cover-function-only: false
 units:
   - target:
     - dir: websocket/target/classes
