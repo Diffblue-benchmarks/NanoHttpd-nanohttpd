@@ -3,40 +3,25 @@ cbmcArguments:
   java-generate-no-comments: true
 units:
   - target:
+    - dir: websocket/target/classes
+      file: org/nanohttpd/protocols/websockets/WebSocket.class
+      sourceDir: websocket/src/main/java
+      sourceFile: org/nanohttpd/protocols/websockets/WebSocket.java
+    # Child of WebSocket.class
     - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/NanoHTTPD.class
+      file: org/nanohttpd/protocols/http/IHTTPSession.class
       sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/NanoHTTPD.java
-    # Child of NanoHTTPD.class
+      sourceFile: org/nanohttpd/protocols/http/IHTTPSession.java
+    # Child of WebSocket.class
     - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/sockets/DefaultServerSocketFactory.class
+      file: org/nanohttpd/protocols/http/response/Response.class
       sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/sockets/DefaultServerSocketFactory.java
-    # Child of NanoHTTPD.class
+      sourceFile: org/nanohttpd/protocols/http/response/Response.java
+    # Child of WebSocket.class
     - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/sockets/SecureServerSocketFactory.class
+      file: org/nanohttpd/protocols/http/response/Status.class
       sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/sockets/SecureServerSocketFactory.java
-    # Child of NanoHTTPD.class
-    - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/tempfiles/DefaultTempFileManagerFactory.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/tempfiles/DefaultTempFileManagerFactory.java
-    # Child of NanoHTTPD.class
-    - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/threading/DefaultAsyncRunner.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/threading/DefaultAsyncRunner.java
-    # Child of NanoHTTPD.class
-    - dir: core/target/classes
-      file: org/nanohttpd/protocols/http/threading/IAsyncRunner.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/protocols/http/threading/IAsyncRunner.java
-    # Child of NanoHTTPD.class
-    - dir: core/target/classes
-      file: org/nanohttpd/util/IFactoryThrowing.class
-      sourceDir: core/src/main/java
-      sourceFile: org/nanohttpd/util/IFactoryThrowing.java
+      sourceFile: org/nanohttpd/protocols/http/response/Status.java
 phases:
 -
   timeout: 60
