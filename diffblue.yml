@@ -22,6 +22,11 @@ units:
       file: org/nanohttpd/protocols/http/response/Status.class
       sourceDir: core/src/main/java
       sourceFile: org/nanohttpd/protocols/http/response/Status.java
+    # Child of WebSocket.class
+    - dir: websocket/target/classes
+      file: org/nanohttpd/protocols/websockets/WebSocketFrame.class
+      sourceDir: websocket/src/main/java
+      sourceFile: org/nanohttpd/protocols/websockets/WebSocketFrame.java
 phases:
 -
   timeout: 60
