@@ -1,99 +1,110 @@
-# Tested on Deeptest release 1.10.0
-cbmcArguments:
-  java-generate-no-comments: true
-  do-not-test-methods-with-access: [ private ]
-  cover-function-only: false
 units:
+#Target TGF: 235.566666667
+# - methods: 30
+# - complexity: 685
+# - construction: 14.3333333333
+# - dependency: 12.7
   - target:
     - dir: websocket/target/classes
       file: org/nanohttpd/protocols/websockets/WebSocketFrame.class
       sourceDir: websocket/src/main/java
       sourceFile: org/nanohttpd/protocols/websockets/WebSocketFrame.java
-    - dir: websocket/target/classes
-      file: org/nanohttpd/protocols/websockets/WebSocketException.class
-      sourceDir: websocket/src/main/java
-      sourceFile: org/nanohttpd/protocols/websockets/WebSocketException.java
-    - dir: websocket/target/classes
-      file: org/nanohttpd/protocols/websockets/OpCode.class
-      sourceDir: websocket/src/main/java
-      sourceFile: org/nanohttpd/protocols/websockets/OpCode.java
-phases:
+#Target TGF: 163.728571429
+# - methods: 35
+# - complexity: 479
+# - construction: 18.5333333333
+# - dependency: 10.3428571429
+  - target:
+    - dir: core/target/classes
+      file: org/nanohttpd/protocols/http/NanoHTTPD.class
+      sourceDir: core/src/main/java
+      sourceFile: org/nanohttpd/protocols/http/NanoHTTPD.java
+#Target TGF: 115.283333333
+# - methods: 23
+# - complexity: 999
+# - construction: 5.73333333333
+# - dependency: 3.81944444444
+  - target:
+    - dir: webserver/target/classes
+      file: org/nanohttpd/webserver/SimpleWebServer.class
+      sourceDir: webserver/src/main/java
+      sourceFile: org/nanohttpd/webserver/SimpleWebServer.java
+dependenciesOnClasspath:
 -
-  timeout: 60
-  cbmcArguments:
-    max-nondet-array-length: 10
-    unwind: 1
-    string-non-empty: true
-    java-assume-inputs-non-null: true
+  source: classes
+  classFile: org/nanohttpd/protocols/websockets/WebSocketFrame.class
 -
-  timeout: 60
-  cbmcArguments:
-    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 10
-    unwind: 1
+  source: classes
+  classFile: org/nanohttpd/protocols/http/threading/DefaultAsyncRunner.class
 -
-  timeout: 60
-  cbmcArguments:
-    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 20
-    unwind: 2
-    string-non-empty: true
-    java-assume-inputs-non-null: true
+  source: classes
+  classFile: org/nanohttpd/webserver/InternalRewrite.class
 -
-  timeout: 60
-  cbmcArguments:
-    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 20
-    unwind: 2
+  source: classes
+  classFile: org/nanohttpd/protocols/http/NanoHTTPD.class
 -
-  timeout: 60
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 3
-    string-non-empty: true
-    java-assume-inputs-non-null: true
+  source: classes
+  classFile: org/nanohttpd/protocols/http/IHTTPSession.class
 -
-  timeout: 60
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 3
+  source: classes
+  classFile: org/nanohttpd/protocols/websockets/OpCode.class
 -
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 4
-    load-containing-class-only: true
-    string-non-empty: true
-    java-assume-inputs-non-null: true
+  source: classes
+  classFile: org/nanohttpd/webserver/SimpleWebServer.class
 -
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 50
-    max-nondet-string-length: 50
-    unwind: 4
-    load-containing-class-only: true
+  source: classes
+  classFile: org/nanohttpd/protocols/http/response/Response.class
 -
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 130
-    max-nondet-string-length: 110
-    unwind: 10
-    string-non-empty: true
-    java-assume-inputs-non-null: true
+  source: classes
+  classFile: org/nanohttpd/protocols/http/ServerRunnable.class
 -
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 300
-    max-nondet-string-length: 100
-    unwind: 10
-
-    
+  source: classes
+  classFile: org/nanohttpd/protocols/http/ClientHandler.class
+-
+  source: classes
+  classFile: org/nanohttpd/webserver/SimpleWebServer$2.class
+-
+  source: classes
+  classFile: org/nanohttpd/webserver/SimpleWebServer$3.class
+-
+  source: classes
+  classFile: org/nanohttpd/webserver/SimpleWebServer$1.class
+-
+  source: classes
+  classFile: org/nanohttpd/util/IFactoryThrowing.class
+-
+  source: classes
+  classFile: org/nanohttpd/util/ServerRunner.class
+-
+  source: classes
+  classFile: org/nanohttpd/webserver/WebServerPlugin.class
+-
+  source: classes
+  classFile: org/nanohttpd/util/IHandler.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/http/sockets/SecureServerSocketFactory.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/http/threading/IAsyncRunner.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/http/request/Method.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/websockets/WebSocketException.class
+-
+  source: classes
+  classFile: org/nanohttpd/webserver/WebServerPluginInfo.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/http/NanoHTTPD$1.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/http/tempfiles/DefaultTempFileManagerFactory.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/websockets/CloseFrame.class
+-
+  source: classes
+  classFile: org/nanohttpd/protocols/http/sockets/DefaultServerSocketFactory.class

@@ -505,6 +505,19 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+			<id>diffblueJacocoConfig</id>
+			<build>
+			<plugins>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.3</version>
+					<configuration combine.self="override"/>
+				</plugin>
+			</plugins>
+			</build>
+		</profile>
 	</profiles>
 	<properties>
 		<minimal.coverage>0.77</minimal.coverage>
